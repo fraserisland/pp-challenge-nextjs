@@ -7,7 +7,6 @@ interface HeaderProps {
 }
 
 export default function Header({ title, subtitle, img }: HeaderProps) {
-
   return (
     <main>
       <h1>{title}</h1>

@@ -1,5 +1,6 @@
 import Header from "../src/components/Header"
 
+// idealy we would share this interface with the backend, and have contracts
 interface Page {
   id: number,
   attributes: {
@@ -22,8 +23,7 @@ interface PageProps {
 
 export default function Page({ page }: PageProps) {
   const { Heading, Subtitle, Image: image } = page.attributes
-  const imageSrc = `${process.env.NEXT_PUBLIC_STRAPI_URL}${image.data.attributes.url}`
-  console.log(imageSrc)
+
   return (
     <div>
       <Header title={Heading} subtitle={Subtitle} img={{ src: `${process.env.NEXT_PUBLIC_STRAPI_URL}${image.data.attributes.url}`, alt: image.data.attributes?.alt ?? "" }} />
